@@ -4,6 +4,7 @@ import { DataSource } from "typeorm"
 import { Client } from "./entities/Client"
 import { Product } from "./entities/Product"
 import { Commande } from "./entities/Commande"
+import { Image } from "./entities/Image"
 
 
 export const AppDataSource = new DataSource({
@@ -15,7 +16,7 @@ export const AppDataSource = new DataSource({
     database: "type_orm",
     synchronize: true,
     logging: true,
-    entities: [Client, Product, Commande],
+    entities: [Client, Product, Commande, Image],
     subscribers: [],
     migrations: [],
     socketPath: "/opt/lampp/var/mysql/mysql.sock"

@@ -56,6 +56,7 @@
        yarn add reflect-metadata --save
        yarn add @types/node --save-dev
 	   yarn add @types/express --save-dev
+	   yarn add @types/multer
        yarn add mysql2 --save
 	   yarn add express
 	   yarn add ts-node

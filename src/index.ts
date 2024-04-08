@@ -9,6 +9,8 @@ const app = express();
 import { ClientRouter } from "./routes/ClientRoutes"
 import { CommandeRouter } from "./routes/CommandeRoutes"
 import { ProductRouter } from "./routes/ProductRoutes"
+import { ImageRouter } from "./routes/ImageRoutes";
+import path from "path";
 
 AppDataSource.initialize()
     .then(() => {
@@ -20,6 +22,8 @@ AppDataSource.initialize()
         app.get("/", (req, res) => {
             res.json("Building API with typeORM");
         });
+        app.use('/images', express.static(path.join(__dirname, 'images')));
+        app.use("/images", ImageRouter);
         app.use("/clients", ClientRouter);
         app.use("/commmandes", CommandeRouter);
         app.use("/products", ProductRouter);
